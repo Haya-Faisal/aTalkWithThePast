@@ -1,0 +1,477 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background: #d9ba95;
+    /* color: #333; */
+    line-height: 1.6;
+    height: 100%;
+}
+
+/* Full-screen images in a column - each taking full viewport */
+.image-column {
+    width: 100vw;
+    position: relative;
+}
+
+.image-column img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+/* Insane glitch container - covers only first image */
+.insane-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Covers only first image */
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Individual glitch text elements - each positioned differently */
+.insane-glitch1,
+.insane-glitch2,
+.insane-glitch3,
+.insane-glitch4,
+.insane-glitch5,
+.insane-glitch6 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    padding: 15px 25px;
+    max-width: 350px;
+    animation: 
+        hyper-shake 1.5s infinite,
+        hyper-color 1.5s infinite,
+        hyper-flicker 1.9s infinite;
+    line-height: 1.4;
+    color: white;
+}
+
+/* Different positions for each glitch text */
+.insane-glitch1 {
+    top: 35vh; /* Higher position */
+    left: 30vw;
+    animation-delay: 0s;
+}
+
+.insane-glitch2 {
+    top: 60vh; /* Middle position */
+    left: 30vw; /* Right side */
+    animation-delay: 0.2s;
+}
+
+.insane-glitch3 {
+    top: 90vh; /* Lower position */
+    left: 30vw; /* Left side */
+    animation-delay: 0.4s;
+}
+
+.insane-glitch4 {
+    top: 45vh; /* Bottom position */
+    left: 68vw; /* Center horizontally */
+    animation-delay: 0.6s;
+}
+
+.insane-glitch5 {
+    top: 80vh; /* Near top */
+    left: 83vw; /* Far right */
+    animation-delay: 0.8s;
+}
+
+.insane-glitch6 {
+    top: 50vh; /* Middle vertically */
+    left: 95vw; /* Far left */
+    animation-delay: 1s;
+}
+
+/* Add to existing CSS - glitch texts for image 8 (last image) */
+.insane-glitchbottom {
+    position: absolute;
+    top: calc(700vh); /* Positions it on the 8th image (8 x 100vh) */
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Individual glitch text elements for bottom image - each positioned differently */
+.insane-glitch11,
+.insane-glitch12,
+.insane-glitch13,
+.insane-glitch14 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    padding: 15px 25px;
+    max-width: 350px;
+    animation: 
+        hyper-shake 1.5s infinite,
+        hyper-color 1.5s infinite,
+        hyper-flicker 1.9s infinite;
+        color: white;
+}
+
+/* Different positions for each bottom glitch text */
+.insane-glitch11 {
+    top: 37vh;
+    left: 32vw;
+    animation-delay: 0s;
+}
+
+.insane-glitch12 {
+    top: 70vh;
+    left: 30vw;
+    animation-delay: 0.5s;
+}
+
+.insane-glitch13 {
+    top: 43vh;
+    left: 68vw;
+    animation-delay: 1s;
+}
+
+.insane-glitch14 {
+    top: 80vh;
+    left: 83vw;
+    font-size: 2rem; /* Slightly larger for emphasis */
+    animation-delay: 2s;
+}
+
+/* Remove the second insane-glitch div that's outside image-column */
+.image-column + .insane-glitch {
+    display: none;
+}
+
+/* Desk-top chat container BELOW images */
+.desk-chat-below {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Wood surface (the desk top) */
+.wood-surface {
+    width: 100%;
+    min-height: 500px;
+    background: 
+        linear-gradient(135deg, #8b4513 0%, #5d2906 100%),
+        radial-gradient(ellipse at 30% 30%, #a0522d 0%, transparent 70%);
+    border-radius: 12px;
+    box-shadow: 
+        inset 0 0 50px rgba(0, 0, 0, 0.7),
+        0 15px 40px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(139, 69, 19, 0.5);
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+}
+
+/* Desk wear marks */
+.desk-wear {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 0, 0, 0.4), 
+        transparent);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Chat area (carved section of desk) */
+.chat-area {
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background: 
+        linear-gradient(to bottom, 
+            rgba(101, 67, 33, 0.9) 0%,
+            rgba(74, 47, 18, 0.95) 100%);
+    border: 2px solid #5d2906;
+    border-radius: 4px;
+    box-shadow: 
+        inset 0 0 40px rgba(0, 0, 0, 0.6),
+        0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom scrollbar */
+.chat-area::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chat-area::-webkit-scrollbar-track {
+    background: rgba(60, 38, 15, 0.6);
+    border-left: 1px solid #5d2906;
+}
+
+.chat-area::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #8b4513, #5d2906);
+    border: 2px solid #3d2418;
+    border-radius: 5px;
+}
+
+.chat-area::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #a0522d, #6b3e1c);
+}
+
+/* Message styles (carved look) */
+.msg {
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 2px;
+    max-width: 80%;
+    animation: carveIn 0.5s ease-out;
+    position: relative;
+    font-size: 1.1em;
+    line-height: 1.5;
+    font-family: 'IM Fell English', serif;
+}
+
+.msg.user {
+    background: 
+        linear-gradient(to right, 
+            rgba(139, 69, 19, 0.85) 0%,
+            rgba(101, 67, 33, 0.75) 100%);
+    margin-left: auto;
+    text-align: right;
+    box-shadow: 
+        inset 0 0 15px rgba(0, 0, 0, 0.4),
+        3px 3px 10px rgba(0, 0, 0, 0.6);
+    color: #f5deb3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-family: inherit;
+}
+
+.msg.bot {
+    background: 
+        linear-gradient(to right, 
+            rgba(74, 47, 18, 0.9) 0%,
+            rgba(60, 38, 15, 0.8) 100%);
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.5),
+        3px 3px 12px rgba(0, 0, 0, 0.7);
+    color: #d2b48c;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-family: 'UnifrakturMaguntia', cursive;
+}
+
+/* Carving effect overlay */
+.msg:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 1px,
+            rgba(0, 0, 0, 0.15) 1px,
+            rgba(0, 0, 0, 0.15) 2px
+        );
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+/* Controls area (fresh carving spot) */
+.desk-controls {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(101, 67, 33, 0.7);
+    border: 2px solid #5d2906;
+    border-radius: 4px;
+    box-shadow: 
+        inset 0 0 25px rgba(0, 0, 0, 0.5),
+        0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.carving-input {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#user-input {
+    flex: 1;
+    padding: 14px 20px;
+    background: rgba(245, 222, 179, 0.9);
+    border: 2px solid #8b4513;
+    border-radius: 3px;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.1em;
+    color: #3d2418;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset 0 0 10px rgba(0, 0, 0, 0.3),
+        0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#user-input:focus {
+    outline: none;
+    background: rgba(255, 248, 220, 0.95);
+    border-color: #d4af37;
+    box-shadow: 
+        inset 0 0 15px rgba(139, 69, 19, 0.5),
+        0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+#send-btn {
+    padding: 14px 30px;
+    background: linear-gradient(to bottom, #8b4513, #5d2906);
+    border: 2px solid #3d2418;
+    border-radius: 3px;
+    color: #f5deb3;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
+
+#send-btn:hover {
+    background: linear-gradient(to bottom, #a0522d, #6b3e1c);
+    border-color: #d4af37;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#send-btn:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.6),
+        inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Status message (etched into wood) */
+.desk-status {
+    text-align: center;
+    margin-top: 15px;
+    color: #d2b48c;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-size: 1.1em;
+    padding: 10px;
+    background: rgba(60, 38, 15, 0.3);
+    border-radius: 2px;
+}
+
+/* Carving animation */
+@keyframes carveIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hyper glitch animations */
+@keyframes hyper-shake {
+    0% { transform: translate(-50%, -50%); }
+    25% { transform: translate(-51%, -49%); }
+    50% { transform: translate(-49%, -51%); }
+    75% { transform: translate(-50.5%, -49.5%); }
+    100% { transform: translate(-50%, -50%); }
+}
+
+@keyframes hyper-color {
+    0% { 
+        color: rgb(246, 250, 246); 
+    }
+    33% { 
+        visibility: hidden;
+    }
+    66% { 
+        visibility: hidden; 
+    }
+    100% { 
+        color: rgb(242, 243, 242);         
+    }
+}
+
+@keyframes hyper-flicker {
+    0%, 45%, 47%, 49%, 51%, 53%, 100% { opacity: 1; }
+    46%, 48%, 50%, 52% { opacity: 0.2; }
+}
+
+/* Scrolling letters - move with scroll */
+/* Scrolling letters container - hidden by default */
+.scrolling-letters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50; /* Between images (z-index 1-10) and glitch text (z-index 100+) */
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Make sure letters are visible on dark backgrounds */
+.scroll-letter {
+    position: absolute;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-weight: bold;
+    color: #ffffff !important;
+    font-size: 2rem !important;
+    opacity: 0.9;
+    /* user-select: none;
+    text-shadow: 
+        0 0 15px #ffffff,
+        0 0 25px rgba(255, 255, 255, 0.8),
+        0 0 35px rgba(255, 255, 255, 0.4) !important; */
+    white-space: nowrap;
+    letter-spacing: 1px;
+    transition: transform 0.2s linear, opacity 0.5s ease;
+    will-change: transform, opacity;
+    z-index: 1000;
+}
+
+/* Add a subtle glow effect */
+.scroll-letter::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0.6;
+}
