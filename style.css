@@ -29,10 +29,10 @@ body {
 /* Insane glitch container - covers only first image */
 .insane-glitch {
     position: absolute;
-    top: 0;
+    top: calc(760vh);
     left: 0;
     width: 100vw;
-    height: 100vh; /* Covers only first image */
+    height: 100vh; 
     z-index: 10;
     pointer-events: none;
 }
@@ -62,45 +62,45 @@ body {
 
 /* Different positions for each glitch text */
 .insane-glitch1 {
-    top: 35vh; /* Higher position */
+    top: 35vh; 
     left: 30vw;
     animation-delay: 0s;
 }
 
 .insane-glitch2 {
-    top: 60vh; /* Middle position */
-    left: 30vw; /* Right side */
+    top: 60vh; 
+    left: 30vw; 
     animation-delay: 0.2s;
 }
 
 .insane-glitch3 {
-    top: 90vh; /* Lower position */
-    left: 30vw; /* Left side */
+    top: 90vh; 
+    left: 30vw; 
     animation-delay: 0.4s;
 }
 
 .insane-glitch4 {
-    top: 45vh; /* Bottom position */
-    left: 68vw; /* Center horizontally */
+    top: 45vh;
+    left: 68vw; 
     animation-delay: 0.6s;
 }
 
 .insane-glitch5 {
-    top: 80vh; /* Near top */
-    left: 83vw; /* Far right */
+    top: 80vh; 
+    left: 83vw; 
     animation-delay: 0.8s;
 }
 
 .insane-glitch6 {
-    top: 50vh; /* Middle vertically */
-    left: 95vw; /* Far left */
+    top: 50vh; 
+    left: 95vw; 
     animation-delay: 1s;
 }
 
-/* Add to existing CSS - glitch texts for image 8 (last image) */
+
 .insane-glitchbottom {
     position: absolute;
-    top: calc(700vh); /* Positions it on the 8th image (8 x 100vh) */
+    top: calc(70vh); /* Positions it on the 8th image (8 x 100vh) */
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -108,7 +108,7 @@ body {
     pointer-events: none;
 }
 
-/* Individual glitch text elements for bottom image - each positioned differently */
+
 .insane-glitch11,
 .insane-glitch12,
 .insane-glitch13,
